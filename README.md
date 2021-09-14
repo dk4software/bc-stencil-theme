@@ -2,6 +2,6 @@
 
 ## Steps to setup
 
-- git clone git@github.com:bigcommerce/cornerstone.git src/
-- bin/init
-- bin/restart
+Run bin/init for initial setup of the environment.
+
+Going forward, use bin/start
