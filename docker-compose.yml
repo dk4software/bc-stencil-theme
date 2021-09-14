@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+  stencil:
+    build:
+      context: .
+      dockerfile: Dockerfile.stencil
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./src:/theme
+    user: 'root'
+    command: ["stencil", "start"]
