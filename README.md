@@ -22,3 +22,21 @@
 - To stop the environment, use `bin/stop`.
 - To find the status of the containers, use `bin/status`.
 - To execute a stencil command e.g. push, bundle etc, use `bin/cli <command>`. e.g. to bundle the theme, run: `bin/cli bundle`.
+
+## Issues and Resolution
+
+**Docker exit with error message:**
+
+```txt
+stencil_1  | internal/modules/cjs/loader.js:818
+stencil_1  |   throw err;
+stencil_1  |   ^
+stencil_1  |
+stencil_1  | Error: Cannot find module 'webpack'
+stencil_1  | Require stack:
+stencil_1  | - /theme/stencil.conf.js
+```
+
+Solution: Connect to the docker by running the command: `docker-compose run --rm stencil bash`
+
+Now run the command: `npm install` in the theme directory. Restart the docker and it should work.
