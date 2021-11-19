@@ -13,7 +13,7 @@
       - Advanced > "Download Original Theme"
       - "Theme Options" > "Download your latest customizations",
       - etc.
-    - Select . This will download a zip of the theme in it's current state.
+    - This will download a zip of the theme.
     - Extract that zip to the `src/` folder.
 
 - Run `bin/init` for initial setup of the environment. It will bring up the containers and also prompt for initializing the stencil API tokens (which link your theme to the Bigcommerce store)
