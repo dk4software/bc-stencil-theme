@@ -1,5 +1,4 @@
 #!/bin/bash
-docker-compose -f docker-compose.yml up -d --remove-orphans --build
-docker-compose -f docker-compose.yml run stencil npm install
-docker-compose -f docker-compose.yml run stencil stencil init
-bin/restart
+docker-compose -f docker-compose.yml build
+docker-compose -f docker-compose.yml run --rm stencil stencil init
+bin/start

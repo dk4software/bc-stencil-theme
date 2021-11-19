@@ -5,6 +5,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.stencil
+    image:
+      dk4software/bc-stencil-theme
     ports:
       - "3000:3000"
     volumes:

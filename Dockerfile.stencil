@@ -6,7 +6,7 @@ WORKDIR /theme
 
 # install the cli
 RUN npm -g config set user root
-RUN npm install -g @bigcommerce/stencil-cli
+RUN npm install -g @bigcommerce/stencil-cli@latest
 
 #copy theme files into container
 COPY ./src ./
