@@ -1,0 +1,11 @@
+FROM node:14.18
+
+WORKDIR /checkout-src
+
+COPY ./checkout-src ./
+
+RUN npm install
+
+CMD ["npm", "run", "dev"]
+
+EXPOSE 8080

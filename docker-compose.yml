@@ -13,3 +13,18 @@ services:
       - ./src:/theme
     user: 'root'
     command: ["stencil", "start"]
+  checkout-dev:
+    build:
+        context: .
+        dockerfile: Dockerfile.checkout
+    image: dk4software/bc-checkout
+    volumes:
+      - "./checkout-src:/checkout-src"
+  checkout-server:
+    image: dk4software/bc-checkout
+    ports:
+      - "8080:8080"
+    volumes:
+      - "./checkout-src:/checkout-src"
+    working_dir: /checkout-src
+    command: ["npm", "run", "dev:server"]

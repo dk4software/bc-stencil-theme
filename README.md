@@ -15,6 +15,7 @@
       - etc.
     - This will download a zip of the theme.
     - Extract that zip to the `src/` folder.
+- Clone the checkout source from https://github.com/bigcommerce/checkout-js into `checkout-src/` folder by running `git clone git@github.com:bigcommerce/checkout-js.git checkout-src/`
 
 - Run `bin/init` for initial setup of the environment. It will bring up the containers and also prompt for initializing the stencil API tokens (which link your theme to the Bigcommerce store)
 
@@ -25,7 +26,7 @@
 
 ## Issues and Resolution
 
-**Docker exit with error message:**
+### Stencil Docker exit with error message
 
 ```txt
 stencil_1  | internal/modules/cjs/loader.js:818
@@ -37,6 +38,31 @@ stencil_1  | Require stack:
 stencil_1  | - /theme/stencil.conf.js
 ```
 
-Solution: Connect to the docker by running the command: `docker-compose run --rm stencil bash`
+**Solution:** Connect to the docker by running the command: `docker-compose run --rm stencil bash`
 
 Now run the command: `npm install` in the theme directory. Restart the docker and it should work.
+
+### Checkout Docker exit error message
+
+```txt
+docker logs bc-stencil-theme_checkout-server_1
+
+> @bigcommerce/checkout@1.182.1 dev:server /checkout-src
+> http-server build
+
+sh: 1: http-server: not found
+npm ERR! code ELIFECYCLE
+npm ERR! syscall spawn
+npm ERR! file sh
+npm ERR! errno ENOENT
+npm ERR! @bigcommerce/checkout@1.182.1 dev:server: `http-server build`
+npm ERR! spawn ENOENT
+npm ERR!
+npm ERR! Failed at the @bigcommerce/checkout@1.182.1 dev:server script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+npm WARN Local package.json exists, but node_modules missing, did you mean to install?
+```
+
+**Solution:** Connect to the docker by running the command: `docker-compose run --rm checkout-dev bash`
+
+Now run the command, in the source directory: `npm install`. Restart the docker and it should work.
