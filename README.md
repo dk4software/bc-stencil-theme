@@ -1,4 +1,4 @@
-# Local dev environment for Bigcommerce: Stencil
+# Local dev environment for Bigcommerce
 
 ## Steps to setup
 
@@ -23,6 +23,15 @@
 - To stop the environment, use `bin/stop`.
 - To find the status of the containers, use `bin/status`.
 - To execute a stencil command e.g. push, bundle etc, use `bin/cli <command>`. e.g. to bundle the theme, run: `bin/cli bundle`.
+
+Once the docker is running properly, you can access the website in the local using [http://localhost:3000](http://localhost:3000)
+
+## Configure Checkout
+
+- Once the docker containers are running properly, open bigcommerce [control panel](https://login.bigcommerce.com)
+- Go to Advance Settings > Checkout in Left Navigation.
+- In General Settings, change Checkout Type to 'Custom Checkout'.
+- Scroll down and in the Custom Checkout Settings, update the Script URL as [http://127.0.0.1:8080/auto-loader-dev.js](http://127.0.0.1:8080/auto-loader-dev.js) and Save
 
 ## Issues and Resolution
 
