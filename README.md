@@ -17,6 +17,8 @@
     - Extract that zip to the `src/` folder.
 - Clone the checkout source from https://github.com/bigcommerce/checkout-js into `checkout-src/` folder by running `git clone git@github.com:bigcommerce/checkout-js.git checkout-src/`
 
+- Find the channel that you want to work with. Open [docker-compose.yml](docker-compose.yml) and search for 'channel Id'. Change the parameter value against '-c' as the channel Id that you want to work with.
+
 - Run `bin/init` for initial setup of the environment. It will bring up the containers and also prompt for initializing the stencil API tokens (which link your theme to the Bigcommerce store)
 
 - Going forward, use `bin/start` to start the environment

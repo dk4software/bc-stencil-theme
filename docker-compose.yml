@@ -12,7 +12,7 @@ services:
     volumes:
       - ./src:/theme
     user: 'root'
-    command: ["stencil", "start"]
+    command: ["stencil", "start", "-c 1105297"] #channel Id.
   checkout-dev:
     build:
         context: .
